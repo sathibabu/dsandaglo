@@ -4,7 +4,7 @@
   "description": "interview bit questions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/dstest.js"
+    "test": "mocha tests/stringtest.js"
   },
   "author": "sathibabu",
   "license": "ISC",
