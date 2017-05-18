@@ -1,0 +1,15 @@
+{
+  "name": "ds",
+  "version": "1.0.0",
+  "description": "interview bit questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/dstest.js"
+  },
+  "author": "sathibabu",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
