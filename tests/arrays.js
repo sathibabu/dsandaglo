@@ -85,3 +85,22 @@ describe('Matrix ZigZag',function(){
     });
 
 });
+
+
+describe('Fill Spiral Matrix for given N',function(){
+	it('3X3',function(){
+		expect(array.fillSpiralMatrix(3).join(' ')).to.equal('1 2 3 6 9 8 7 4 5');
+	});
+
+	it('4X4',function(){
+		
+		expect(array.fillSpiralMatrix(4).join(' ')).to.equal('1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10');
+	});
+    it('2X2',function(){
+    	
+    	expect(array.fillSpiralMatrix(2).join(' ')).to.equal('1 2 4 3');
+    });
+    
+    
+
+});
