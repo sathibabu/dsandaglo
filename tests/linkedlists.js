@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
-var linkedlist = require('../lib/linkedlists');
+var linkedlist = require('../lib/linkedlists').linkedList;
+var mergeLists = require('../lib/linkedlists').mergeLists;
 
 
 describe('LinkedLists',function(){
@@ -148,7 +149,41 @@ describe('Delete nth Node',function(){
    });
 
 
+});
 
+
+describe('Merge two sorted linked lists ',function(){
+    it('Simple merge',function(){
+
+          let list1 = new linkedlist();
+          list1.addToList(5);
+          list1.addToList(7);
+
+          let list2 = new linkedlist();
+          list2.addToList(6);
+          list2.addToList(8);
+ 
+          list3 = new linkedlist();
+          list3.head = mergeLists(list1,list2);
+
+});
+
+
+  /*  it('one of the list empty',function(){
+
+    });
+
+    it('both the lists empty',function(){
+
+    });
+
+    it('every element in list1 is greate than every element in list2',function(){
+
+    });
+
+    it('every element in list2 is greate than every element in list1',function(){
+
+    });*/
 
 
 });

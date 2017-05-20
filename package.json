@@ -4,7 +4,7 @@
   "description": "interview bit questions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/linkedlists.js"
+    "test": "mocha tests/arrays.js"
   },
   "author": "sathibabu",
   "license": "ISC",
