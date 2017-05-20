@@ -57,3 +57,31 @@ describe('Matrix Spiral',function(){
 
 
 });
+
+
+describe('Matrix ZigZag',function(){
+	it('3X3',function(){
+		let A = [[1,2,3],[4,5,6],[7,8,9]];
+		 expect(array.printZigZag(A,3,3).join(' ')).to.equal('1 2 3 6 5 4 7 8 9');
+	});
+	it('4X4',function(){
+		let A = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
+		expect(array.printZigZag(A,4,4).join(' ')).to.equal('1 2 3 4 8 7 6 5 9 10 11 12 16 15 14 13');
+	});
+	
+	it('2X2',function(){
+    	let A = [[1,2],[3,4]];
+    	expect(array.printZigZag(A,2,2).join(' ')).to.equal('1 2 4 3');
+    });
+
+	 it('1X1',function(){
+    	let A = [[1,2]];
+    	expect(array.printZigZag(A,1,2).join(' ')).to.equal('1 2');
+    });
+
+    it('3X2',function(){
+    	let A = [[1,2],[3,4],[5,6]];
+    	expect(array.printZigZag(A,3,2).join(' ')).to.equal('1 2 4 3 5 6');
+    });
+
+});
