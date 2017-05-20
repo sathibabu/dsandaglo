@@ -23,4 +23,9 @@ describe('continues max sub array',function(){
         expect(array.maxSubArray(A).join(' ')).to.equal('-1');
    });
 
+      it('only one negitive number',function(){
+        let A = [-1];
+        expect(array.maxSubArray(A).join(' ')).to.equal('-1');
+   });
+
 });
