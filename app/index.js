@@ -9,13 +9,15 @@ let C = [];
 //C = merge.merge(A,B,C,0,0,A.length,B.length);
 //console.log(merge.merge(A,B,C,0,0,A.length,B.length));
 //console.log(binsearch.merge(A,B));
-
 let list = new linkedlist();
-    	
+          
 list.addToList(5);
+list.addToList(6);
 list.addToList(7);
 list.addToList(8);
-list.addToList(12);
-list.addToList(14);
-list.reverseList();
+list.addToList(9);
+
+list.deleteNode(6)
+
+console.log(list.printList());
 

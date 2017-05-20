@@ -73,3 +73,76 @@ describe('LinkedLists Reverse',function(){
 	});
 
 })
+
+
+
+describe('Delete nth Node',function(){
+   
+   it('deletes the random node in the list',function(){
+          
+          let list = new linkedlist();
+          
+          list.addToList(5);
+          list.addToList(6);
+          list.addToList(7);
+          list.addToList(8);
+          list.addToList(9);
+
+          list.deleteNode(2)
+          
+          expect(list.printList().join(' ')).to.equal('5 7 8 9');           
+
+   });
+
+   it('deletes the first node in the list',function(){
+          let list = new linkedlist();
+          list.addToList(5);
+          list.addToList(6);
+          list.addToList(7);
+          list.addToList(8);
+          list.addToList(9);
+          list.deleteNode(1)
+          expect(list.printList().join(' ')).to.equal('6 7 8 9');
+   });
+
+
+   it('deletes the last node in the list',function(){
+          let list = new linkedlist();
+          list.addToList(5);
+          list.addToList(6);
+          list.addToList(7);
+          list.addToList(8);
+          list.addToList(9);
+          list.deleteNode(5)
+          expect(list.printList().join(' ')).to.equal('5 6 7 8');
+   });
+
+
+   it('deletes the node where node to be deleteted is greater than the give in the list',function(){
+   		  let list = new linkedlist();
+          list.addToList(5);
+          list.addToList(6);
+          list.addToList(7);
+          list.addToList(8);
+          list.addToList(9);
+          list.deleteNode(122)
+          expect(list.printList().join(' ')).to.equal('5 6 7 8 9');
+   });
+
+
+   it('if negitive number is given to delete',function(){
+          let list = new linkedlist();
+          list.addToList(5);
+          list.addToList(6);
+          list.addToList(7);
+          list.addToList(8);
+          list.addToList(9);
+          list.deleteNode(122)
+          expect(list.printList().join(' ')).to.equal('5 6 7 8 9');
+   });
+
+
+
+
+
+});
