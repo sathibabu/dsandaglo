@@ -137,8 +137,14 @@ describe('Delete nth Node',function(){
           list.addToList(7);
           list.addToList(8);
           list.addToList(9);
-          list.deleteNode(122)
+          list.deleteNode(-122)
           expect(list.printList().join(' ')).to.equal('5 6 7 8 9');
+   });
+
+   it('Delete nth node on emplty list',function(){
+          let list = new linkedlist();
+          list.deleteNode(122)
+          expect(list.printList().join(' ')).to.equal('');
    });
 
 
