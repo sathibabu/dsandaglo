@@ -1,8 +1,10 @@
-var array = require('../lib/arrays');
+var hasing = require('../lib/hasing');
 
+// let A = [3,4,6,7,5,5];
+// 		let target = 10;
 
- let A = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
-//expect(array.printZigZag(A,3,3).join(' ')).to.equal('1 2 3 6 5 4 7 8 9');
-console.log(array.rotateArray(A,4));
+let A = [2,7,11,15];
+let target = 9;
+console.log(hasing.twoSum(A,9));
 
 
