@@ -31,3 +31,32 @@ describe('2Sum',function(){
 
 });
 
+
+describe('annagram tests',function(){
+	it('Simaple test',function(){
+		let A = ['aab','baa','aba','bcc','ccb','cbc','bat','tab'];
+		expect(hasing.anagram(A).join(' ')).to.equal('aab,baa,aba bcc,ccb,cbc bat,tab');
+	});
+
+	it('angram test with single name',function(){
+		let A = ['aab','baa'];
+		expect(hasing.anagram(A).join(' ')).to.equal('aab,baa');
+	});
+
+	it('angram test with mismatch',function(){
+		let A = ['aab','faa'];
+		expect(hasing.anagram(A).join(' ')).to.equal('');
+	});
+
+	it('angram test with two mismatch',function(){
+		let A = ['Zab','faa'];
+		expect(hasing.anagram(A).join(' ')).to.equal('');
+	});
+
+	it('angram test with two mismatch',function(){
+		let A = [];
+		expect(hasing.anagram(A).join(' ')).to.equal('');
+	});
+
+});
+
