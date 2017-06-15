@@ -56,8 +56,14 @@ function checkDigitMissing(A,B){
 	let arrB = B.toString().split('');
 	let flag = true;
 	arrB.forEach(item=>{
-		if(arrA.indexOf(item)==-1)
+		let index = arrA.indexOf(item);
+		
+		if(index==-1)
 			flag=false;
+		else{
+            arrA.splice(index,1);
+		}
+
 	});
 
 	return flag;
@@ -78,18 +84,49 @@ function isValidB(A,B){
     return false;
 }
 
+function validateAB(A,B){
 
+    return isValidA(A) &&  isValidB (A,B);
+}
+
+function generateAB(Number){
+
+	let seeds = [];
+	let tail=0;
+	
+	if(Number%2!=0){
+       tail++;
+	}
+
+	let seedA = Math.floor(Number/2)+tail;
+	let seedB = Math.floor(Number/2);
+
+	//let seedBlimit =  Math.pow(10, (size(Number)-3) > 0 ? (size(Number)-3):0);
+
+	let seedBlimit = 0;
+
+	while(seedA < Number && seedB > seedBlimit){
+		
+		if(validateAB(seedA,seedB)){
+			let obj = [];
+			obj.push(seedA);
+			obj.push(seedB)
+			seeds.push(obj);
+			//seedB=temp;	
+		}
+
+		seedA++;
+		seedB--;
+
+	}
+
+	return seeds;
+}
 
 var twoSum = function(Number){
 
-// 	906 + 96 = 1002
-// 911 + 91 = 1002
-// 951 + 51 = 1002
-
-    let A = 951;
-    let B = 50;    
-     
-    return isValidA(A) &&  isValidB (A,B);
+  let seeds = generateAB(Number);
+  return seeds;
 }
 
 module.exports = {twoSum};
