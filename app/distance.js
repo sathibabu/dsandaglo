@@ -63,9 +63,11 @@ function getStats(data){
     }
 
     for(let i=1;i<datalen;i++){
-        let curr_dist  = Math.floor(latlonToDist(data[i-1].lon,data[i].lon,data[i-1].lat,data[i].lat))/1000;
-        let cuur_speed = Math.floor(60/(timeStampTohours(data[i-1].time,data[i].time)))*curr_dist;
+        let curr_dist  = (latlonToDist(data[i-1].lon,data[i].lon,data[i-1].lat,data[i].lat));
+        let curr_time =  timeStampTohours(data[i-1].time,data[i].time);
         
+        let cuur_speed = Math.floor(curr_dist/curr_time)
+        total_speed+=cuur_speed;
         if(cuur_speed >=max_speed){
         	max_speed=cuur_speed;	
         }
@@ -77,25 +79,19 @@ function getStats(data){
         if(data[i].ele < min_elevation){
         	min_elevation = data[i].ele;
         }
-
         total_dist+=curr_dist;
-        total_speed+=cuur_speed;   
-    } 
-    
-    return {total_dist,total_speed,max_speed,max_elevation,min_elevation} 
+        total_time+=curr_time;   
+    }
+
+    //total_dist = latlonToDist(data[0].lat,data[datalen-1].lat,data[0].lon,data[datalen-1].lon);
+    return {total_dist,average_speed:total_dist/total_time,total_time,max_speed,max_elevation,min_elevation} 
 
 }
 
+
+
 var Stats = function(data){
-
-
-    
-
-    
- //    console.log(getStats(data));
-	// console.log(timeStampTohours("2016-12-11T00:39:17Z","2016-12-11T00:39:18Z"));
-	// return  latlonToDist(13.1935950,13.1936350,77.6491150,77.6491150);
-	return getStats(data);
+ 	return getStats(data);
 }
 
 module.exports = {Stats};
