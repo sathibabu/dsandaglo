@@ -1,13 +1,11 @@
 var distance = require('./distance');
+var axios = require('axios')
+var parser = require('xml2json');
+var options = {
+  noColor: true
+};
 
- let A = [3,4,6,7,5,5];
-// 		let target = 10;
-
-// let A = [2,7,11,15];
-// let target = 9;
-// console.log(hasing.twoSum(A,9));
-
-//let A = ['aab','baa','aba','bcc','ccb','cbc','bat','tab']
+let A = [3,4,6,7,5,5];
 
 let data = [{
             lan:13.1935950,
@@ -21,5 +19,16 @@ let data = [{
             time:"2016-12-11T00:37:55Z",
             ele:922.4  
     }]
+
+var distUrl ="https://dl.dropboxusercontent.com/s/8nvqnasci6l76nz/Problem.gpx?dl=0"; 
+axios.get(distUrl).then(function(res){
+    let resText = (res.data);
+    let resAsJson = JSON.parse(parser.toJson(resText))
+    let data = resAsJson.gpx.trk.trkseg.trkpt;
+   
+     
+}).catch(function(err){
+
+});
 
 console.log(distance.Stats(data));
