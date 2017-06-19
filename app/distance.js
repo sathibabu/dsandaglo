@@ -63,7 +63,7 @@ function getStats(data){
     }
 
     for(let i=1;i<datalen;i++){
-        let curr_dist  = Math.floor(latlonToDist(data[i-1].lan,data[i].lan,data[i-1].lat,data[i].lat))/1000;
+        let curr_dist  = Math.floor(latlonToDist(data[i-1].lon,data[i].lon,data[i-1].lat,data[i].lat))/1000;
         let cuur_speed = Math.floor(60/(timeStampTohours(data[i-1].time,data[i].time)))*curr_dist;
         
         if(cuur_speed >=max_speed){
